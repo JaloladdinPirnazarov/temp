@@ -18,9 +18,15 @@ app.use(carCategoryRouter)
 app.use(carRouter)
 app.use(authRouter)
 
-connectDB()
+const start = async () => {
+    try {
+        await connectDB()
+        app.listen(PORT, () => {
+            console.log(`http://localhost:${PORT}`);
+        })
+    } catch (error) {
+        console.log(`Error starting server: ${error.message}`);
+    }
+}
 
-
-app.listen(PORT, () => {
-    console.log(`http://localhost:${PORT}`);
-})
+start()

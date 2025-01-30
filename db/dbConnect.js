@@ -1,8 +1,8 @@
 const mongoose = require("mongoose")
 
-async function connectDB(params) {
+async function  connectDB() {
     try {
-        await mongoose.connect("mongodb://localhost:27017/carMarket",{
+        await mongoose.connect("mongodb+srv://jaloladdinpirnazarov:WtnMrpN1Cb8UUVs7@cluster0.7vvuv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0",{
             useNewUrlParser: true,
             useUnifiedTopology: true
           })
